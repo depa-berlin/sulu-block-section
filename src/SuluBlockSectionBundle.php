@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Depa\SuluBlockSectionBundle;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Depa\SuluBlockHelperBundle\AbstractBlockBundle;
 
-class SuluBlockSectionBundle extends Bundle
+class SuluBlockSectionBundle extends AbstractBlockBundle
 {
 }
