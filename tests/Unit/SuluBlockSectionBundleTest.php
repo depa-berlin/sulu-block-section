@@ -7,6 +7,7 @@ namespace Depa\SuluBlockSectionBundle\Tests\Unit;
 use Depa\SuluBlockSectionBundle\SuluBlockSectionBundle;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 
 class SuluBlockSectionBundleTest extends TestCase
 {
@@ -25,7 +26,9 @@ class SuluBlockSectionBundleTest extends TestCase
 
     private function load(): void
     {
-        $this->bundle->getContainerExtension()->load([], $this->container);
+        $extension = $this->bundle->getContainerExtension();
+        self::assertInstanceOf(ExtensionInterface::class, $extension);
+        $extension->load([], $this->container);
     }
 
     public function testLoadSetsBundleMetadataParameter(): void
